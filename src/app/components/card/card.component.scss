@@ -1,0 +1,30 @@
+.card {
+  border-radius: 10px;
+  background-color: var(--color-light);
+  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  &__header {
+    position: relative;
+    height: 190px;
+    overflow-y: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+  }
+
+  &__title {
+    height: 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  &__body {
+    padding: 20px 30px;
+    row-gap: 10px;
+  }
+}

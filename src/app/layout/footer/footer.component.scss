@@ -1,4 +1,8 @@
 .blog__footer {
   padding: 20px 70px;
   background-color: var(--color-secondary);
+
+  @media screen and (max-width: 1200px) {
+    padding: 20px 30px;
+  }
 }

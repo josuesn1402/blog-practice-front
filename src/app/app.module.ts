@@ -6,9 +6,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { MainComponent } from './layout/main/main.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { ComponentsModule } from './components/components.module';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { HomeComponent } from './layout/home/home.component';
+import { PostComponent } from './components/post/post.component';
+import { CategoryComponent } from './components/category/category.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import { PostAddComponent } from './components/post-add/post-add.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +22,13 @@ import { HomeComponent } from './layout/home/home.component';
     FooterComponent,
     NavbarComponent,
     HomeComponent,
+    PostComponent,
+    CategoryComponent,
+    CommentsComponent,
+    PostAddComponent,
+    CardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ComponentsModule],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
