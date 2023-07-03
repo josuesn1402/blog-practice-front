@@ -1,17 +1,16 @@
-<div class="card">
-  <div class="card__header">
-    <div class="hover__img ts-df"></div>
-    <img
-      src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=350"
-      alt=""
-    />
+<a [routerLink]="'/post/'">
+  <div class="card">
+    <div class="card__header">
+      <div class="hover__img ts-df"></div>
+      <img [src]="imageUrl" alt="" />
+    </div>
+    <div class="card__body flex flex-col">
+      <h2 class="card__title ts-df text-center font-bold overflow-y-hidden">
+        {{ title }}
+      </h2>
+      <p class="card__description ts-df text-justify overflow-y-hidden">
+        {{ content }}
+      </p>
+    </div>
   </div>
-  <div class="card__body flex flex-col">
-    <h2 class="card__title ts-df text-center font-bold">Lorem ipsum dolor</h2>
-    <p class="card__description ts-df text-justify overflow-hidden">
-      Lorem ipsum dolor sit amet consectetur. Volutpat vulputate odio magna
-      elementum magna semper dictum iaculis pellentesque. Lorem euismod
-      tincidunt risus eget neque.
-    </p>
-  </div>
-</div>
+</a>
