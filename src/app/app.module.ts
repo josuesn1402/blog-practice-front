@@ -6,13 +6,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { MainComponent } from './layout/main/main.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { PostComponent } from './components/post/post.component';
-import { CategoryComponent } from './components/category/category.component';
-import { CommentsComponent } from './components/comments/comments.component';
+import { ComponentsModule } from './components/components.module';
+import { NavbarComponent } from './layout/navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MainComponent, FooterComponent, PostComponent, CategoryComponent, CommentsComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent, HeaderComponent, MainComponent, FooterComponent, NavbarComponent],
+  imports: [BrowserModule, AppRoutingModule, ComponentsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
