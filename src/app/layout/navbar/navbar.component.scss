@@ -1,0 +1,12 @@
+.nav__link {
+  transition-property: color;
+  transition-duration: 0.2s;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &:active {
+    color: var(--color-secondary);
+  }
+}

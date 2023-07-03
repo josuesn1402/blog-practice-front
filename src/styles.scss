@@ -10,3 +10,16 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
+
+:root {
+  --color-light: #eeeeee;
+  --color-primary: #0092ca;
+  --color-gray: #393e46;
+  --color-secondary: #222831;
+  --font-primary: 'Open Sans', sans-serif;
+}
+
+html {
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
