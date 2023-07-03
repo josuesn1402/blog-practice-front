@@ -1,0 +1,36 @@
+.post-add {
+  margin: auto;
+  max-width: 1200px;
+
+  &__title {
+    font-size: 2rem;
+  }
+}
+
+.input__container {
+  input,
+  textarea {
+    margin: 20px 70px;
+    line-height: 2.5rem;
+    background-color: var(--color-light);
+  }
+
+  textarea {
+    min-height: 200px;
+  }
+}
+
+.btn {
+  width: 180px;
+  height: 50px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: var(--color-secondary);
+  }
+}

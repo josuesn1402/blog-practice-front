@@ -1,6 +1,5 @@
 .card {
   border-radius: 10px;
-  background-color: var(--color-light);
   box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 
@@ -27,4 +26,29 @@
     padding: 20px 30px;
     row-gap: 10px;
   }
+}
+
+.card:hover {
+  .hover__img {
+    height: 190px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 146, 202, 0.2);
+    z-index: 4;
+  }
+
+  .card__title {
+    color: var(--color-secondary);
+  }
+
+  .card__description {
+    color: var(--color-gray);
+  }
+}
+
+.ts-df {
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
 }
