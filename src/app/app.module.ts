@@ -14,6 +14,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { PostAddComponent } from './components/post-add/post-add.component';
 import { CardComponent } from './components/card/card.component';
 import { CommentsAddComponent } from './components/comments-add/comments-add.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { CommentsAddComponent } from './components/comments-add/comments-add.com
     CardComponent,
     CommentsAddComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
