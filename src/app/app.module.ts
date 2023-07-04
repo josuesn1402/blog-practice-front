@@ -13,6 +13,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { PostAddComponent } from './components/post-add/post-add.component';
 import { CardComponent } from './components/card/card.component';
+import { CommentsAddComponent } from './components/comments-add/comments-add.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CardComponent } from './components/card/card.component';
     CommentsComponent,
     PostAddComponent,
     CardComponent,
+    CommentsAddComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
