@@ -1,6 +1,6 @@
 .post {
   margin: auto;
-  width: 1000px;
+  max-width: 1000px;
 
   &__header {
     position: relative;
@@ -30,5 +30,48 @@
   &__content {
     font-size: 1.125rem;
     line-height: normal;
+  }
+
+  @media screen and (max-width: 1200px) {
+    max-width: unset;
+
+    &__header {
+      height: 25rem;
+    }
+
+    &__body {
+      margin: 0 30px;
+    }
+
+    &__title {
+      font-size: 1.75rem;
+      line-height: 2.125rem;
+    }
+
+    &__content {
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    &__header {
+      height: 18rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    &__content {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    &__header {
+      height: 14rem;
+    }
   }
 }
