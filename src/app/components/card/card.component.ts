@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Post } from 'src/app/models/post.model';
 
 @Component({
   selector: 'bg-card',
@@ -6,7 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() title?: string;
-  @Input() imageUrl?: string;
-  @Input() content?: string;
+  @Input() post?: Post;
 }

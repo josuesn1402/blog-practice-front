@@ -1,15 +1,15 @@
-<a [routerLink]="'/post/'">
+<a [routerLink]="'/post/' + (post?.id || '')">
   <div class="card">
     <div class="card__header">
       <div class="hover__img ts-df"></div>
-      <img [src]="imageUrl" alt="" />
+      <img [src]="post?.urlImage || ''" alt="" />
     </div>
     <div class="card__body flex flex-col">
       <h2 class="card__title ts-df text-center font-bold overflow-y-hidden">
-        {{ title }}
+        {{ post?.title }}
       </h2>
       <p class="card__description ts-df text-justify overflow-y-hidden">
-        {{ content }}
+        {{ post?.content }}
       </p>
     </div>
   </div>

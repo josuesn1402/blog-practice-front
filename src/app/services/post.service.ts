@@ -30,4 +30,8 @@ export class PostService {
     }
     return content;
   }
+
+  getPostId(id: number): Observable<Post> {
+    return this.http.get<Post>(`${this.apiUrl}${id}`);
+  }
 }

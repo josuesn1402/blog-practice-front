@@ -1,5 +1,5 @@
 <div class="cards__container grid justify-evenly">
   <div *ngFor="let post of posts">
-    <bg-card [title]="post.title" [imageUrl]="post.urlImage" [content]="post.content"></bg-card>
+    <bg-card [post]="post"></bg-card>
   </div>
 </div>
