@@ -3,13 +3,17 @@
     <img [src]="post?.urlImage || ''" alt="" class="post__picture w-full" />
   </div>
   <div>
-    <h5 class="post__category border border-solid inline-block px-4 py-0.5 text-sm">
+    <h5
+      class="post__category border border-solid inline-block px-4 py-0.5 text-sm"
+    >
       {{ post?.category?.description }}
     </h5>
   </div>
   <article class="post__body">
     <div>
-      <h1 class="post__title font-bold text-center text-3xl py-5 px-12">{{ post?.title }}</h1>
+      <h1 class="post__title font-bold text-center text-3xl py-5 px-12">
+        {{ post?.title }}
+      </h1>
     </div>
     <div class="py-3">
       <p class="post__content text-justify text-sm font-normal">
@@ -26,6 +30,9 @@
         <bg-comments [comment]="comment"></bg-comments>
       </div>
     </div>
-    <bg-comments-add [postId]="post?.id" (commentAdded)="handleCommentAdded($event)"></bg-comments-add>
+    <bg-comments-add
+      [postId]="post?.id"
+      (commentAdded)="handleCommentAdded($event)"
+    ></bg-comments-add>
   </section>
 </section>

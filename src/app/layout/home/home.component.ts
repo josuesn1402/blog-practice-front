@@ -20,9 +20,7 @@ export class HomeComponent implements OnInit {
     this.postService.getPosts().subscribe((posts) => {
       this.posts = posts.map((post) => {
         const truncatedTitle = this.postService.truncateTitle(post.title);
-        const truncatedContent = this.postService.truncateContent(
-          post.content
-        );
+        const truncatedContent = this.postService.truncateContent(post.content);
         return {
           ...post,
           title: truncatedTitle,

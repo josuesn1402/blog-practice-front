@@ -16,13 +16,7 @@
         ></textarea>
       </label>
       <div *ngIf="isNotEmpty" class="flex justify-center">
-        <div
-          class="bg-red-100 text-red-800 py-2 px-14 mb-3 border-2 border-red-800 rounded-md"
-        >
-          <p class="text-sm text-center font-bold">
-            El campo no puede estar en blanco.
-          </p>
-        </div>
+        <bg-alert [message]="'El campo no puede estar en blanco.'"></bg-alert>
       </div>
     </div>
     <input type="button" value="Registrar" (click)="addComment()" class="btn" />
