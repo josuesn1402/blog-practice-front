@@ -7,7 +7,6 @@ import { HomeComponent } from './layout/home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'post', component: PostComponent },
   { path: 'post/:id', component: PostComponent },
   { path: 'postear', component: PostAddComponent },
 ];
