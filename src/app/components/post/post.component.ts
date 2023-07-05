@@ -1,6 +1,7 @@
 // post.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Category } from 'src/app/models/category.model';
 import { Comment } from 'src/app/models/comment.model';
 import { Post } from 'src/app/models/post.model';
 import { CommentService } from 'src/app/services/comments.service';

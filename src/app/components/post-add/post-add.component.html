@@ -2,30 +2,65 @@
   <div class="post-add__title my-3">
     <h1 class="text-center font-bold">Registrar Artículo</h1>
   </div>
-  <form action="/" class="post-add__form grid gap-y-6">
+  <form class="post-add__form grid gap-y-6" #formAdd="ngForm">
     <div class="input__container grid gap-y-2">
-      <label for="title" class="input__title text-xl">Título</label>
-      <input type="text" name="title" id="title" class="px-2" />
+      <label for="title" class="input__title text-xl">Título *</label>
+      <input
+        type="text"
+        name="title"
+        id="title"
+        class="px-2"
+        [(ngModel)]="model.title"
+        #title="ngModel"
+        minlength="10"
+        maxlength="55"
+        required
+      />
     </div>
     <div class="input__container grid gap-y-2">
-      <label for="content" class="input__content text-xl">Contenido:</label>
+      <label for="content" class="input__content text-xl">Contenido *</label>
       <textarea
         name="content"
         id="content"
         class="px-2"
         cols="30"
         rows="5"
+        [(ngModel)]="model.content"
+        #content="ngModel"
+        required
       ></textarea>
     </div>
     <div class="input__container grid gap-y-2">
       <label for="urlimage" class="input__urlimage text-xl"
         >Url de la imagen:</label
       >
-      <input type="text" name="urlimage" id="urlimage" class="px-2" />
+      <textarea
+        type="text"
+        name="urlimage"
+        id="urlimage"
+        class="px-2"
+        cols="30"
+        rows="2"
+        [(ngModel)]="model.urlImage"
+        #urlImage="ngModel"
+        minlength="10"
+        maxlength="230"
+        required
+      ></textarea>
     </div>
     <div class="input__container grid gap-y-2">
-      <label for="category" class="input__category text-xl">Categoria:</label>
-      <input type="text" name="category" id="category" class="px-2" />
+      <label for="category" class="input__category text-xl">Categoria *</label>
+      <input
+        type="text"
+        name="category"
+        id="category"
+        class="px-2"
+        [(ngModel)]="model.category"
+        #category="ngModel"
+        minlength="3"
+        maxlength="40"
+        required
+      />
     </div>
     <input type="submit" value="Registrar" class="btn" />
   </form>
