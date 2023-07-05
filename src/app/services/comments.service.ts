@@ -23,7 +23,8 @@ export class CommentService {
     return this.http.put<Comment>(`${this.apiUrl}${id}`, comment);
   }
 
-  deleteComment(id: number): Observable<Comment> {
-    return this.http.delete<Comment>(`${this.apiUrl}${id}`);
+  deleteComment(id: number): Observable<any> {
+    const url = `${this.apiUrl}${id}`;
+    return this.http.delete(url);
   }
 }

@@ -1,6 +1,7 @@
 .comment {
   border-color: var(--color-gray);
   color: var(--color-gray);
+  grid-template-columns: 1fr auto;
 
   @media screen and (max-width: 800px) {
     margin: 1rem 1.2rem;
