@@ -18,7 +18,7 @@ export class PostService {
   truncateTitle(title: string): string {
     const maxLength = 25;
     if (title.length > maxLength) {
-      return title.substr(0, maxLength) + '...';
+      return title.substring(0, maxLength) + '...';
     }
     return title;
   }
@@ -26,12 +26,16 @@ export class PostService {
   truncateContent(content: string): string {
     const maxLength = 176;
     if (content.length > maxLength) {
-      return content.substr(0, maxLength) + '...';
+      return content.substring(0, maxLength) + '...';
     }
     return content;
   }
 
   getPostId(id: number): Observable<Post> {
     return this.http.get<Post>(`${this.apiUrl}${id}`);
+  }
+
+  addPost(post: Post): Observable<Post> {
+    return this.http.post<Post>(this.apiUrl, post);
   }
 }

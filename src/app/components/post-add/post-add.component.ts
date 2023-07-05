@@ -22,4 +22,11 @@ export class PostAddComponent {
 
   @ViewChild('formAdd', { static: false })
   form!: FormControl;
+
+  onSubmit() {
+    if (this.form.valid) {
+      console.log('modelo', this.model);
+      this.form.reset();
+    }
+  }
 }

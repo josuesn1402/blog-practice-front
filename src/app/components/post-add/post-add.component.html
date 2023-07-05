@@ -17,6 +17,12 @@
         required
       />
     </div>
+    <div
+      *ngIf="title.invalid && (title.dirty || title.touched)"
+      class="flex justify-center"
+    >
+      <bg-alert [message]="''"></bg-alert>
+    </div>
     <div class="input__container grid gap-y-2">
       <label for="content" class="input__content text-xl">Contenido *</label>
       <textarea
@@ -29,6 +35,12 @@
         #content="ngModel"
         required
       ></textarea>
+    </div>
+    <div
+      *ngIf="content.invalid && (content.dirty || content.touched)"
+      class="flex justify-center"
+    >
+      <bg-alert [message]="''"></bg-alert>
     </div>
     <div class="input__container grid gap-y-2">
       <label for="urlimage" class="input__urlimage text-xl"
@@ -48,6 +60,12 @@
         required
       ></textarea>
     </div>
+    <div
+      *ngIf="urlImage.invalid && (urlImage.dirty || urlImage.touched)"
+      class="flex justify-center"
+    >
+      <bg-alert [message]="''"></bg-alert>
+    </div>
     <div class="input__container grid gap-y-2">
       <label for="category" class="input__category text-xl">Categoria *</label>
       <input
@@ -62,6 +80,19 @@
         required
       />
     </div>
-    <input type="submit" value="Registrar" class="btn" />
+    <div
+      *ngIf="category.invalid && (category.dirty || category.touched)"
+      class="flex justify-center"
+    >
+      <bg-alert [message]="''"></bg-alert>
+    </div>
+    <button
+      type="submit"
+      class="btn"
+      (click)="onSubmit()"
+      [disabled]="formAdd.form.invalid || formAdd.form.untouched"
+    >
+      Registrar
+    </button>
   </form>
 </div>
