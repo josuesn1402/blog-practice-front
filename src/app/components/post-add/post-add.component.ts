@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component } from '@angular/core';
 import { PostAdd } from 'src/app/models/post-add.model';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'bg-post-add',
@@ -8,11 +8,6 @@ import { PostAdd } from 'src/app/models/post-add.model';
   styleUrls: ['./post-add.component.scss'],
 })
 export class PostAddComponent {
-  title: string = '';
-  content: string = '';
-  urlImage: string = '';
-  category: string = '';
-
   model: PostAdd = {
     title: '',
     content: '',
@@ -20,13 +15,39 @@ export class PostAddComponent {
     category: '',
   };
 
-  @ViewChild('formAdd', { static: false })
-  form!: FormControl;
+  constructor(private postService: PostService) {}
 
   onSubmit() {
-    if (this.form.valid) {
-      console.log('modelo', this.model);
-      this.form.reset();
+    if (this.isFormInvalid()) {
+      return;
     }
+
+    this.postService.addPost(this.model).subscribe(
+      (response) => {
+        console.log('Post registrado:', response);
+        this.resetForm();
+      },
+      (error) => {
+        console.error('Error al registrar el post:', error);
+      }
+    );
+  }
+
+  isFormInvalid(): boolean {
+    return (
+      !this.model.title ||
+      !this.model.content ||
+      !this.model.urlImage ||
+      !this.model.category
+    );
+  }
+
+  resetForm() {
+    this.model = {
+      title: '',
+      content: '',
+      urlImage: '',
+      category: '',
+    };
   }
 }
