@@ -20,9 +20,18 @@ export class CommentsAddComponent {
   @ViewChild('commentInput', { static: false }) commentInputRef!: ElementRef;
   @Output() commentAdded: EventEmitter<Comment> = new EventEmitter<Comment>(); // Nuevo evento
 
+  isNotEmpty: boolean = false;
+
   constructor(private commentService: CommentService) {}
 
   addComment(): void {
+    if (this.commentText.trim() === '') {
+      this.isNotEmpty = true;
+      return;
+    }
+
+    this.isNotEmpty = false;
+
     const inputComment: Comment = {
       content: this.commentText,
       post: this.postId,
@@ -34,6 +43,7 @@ export class CommentsAddComponent {
       this.commentAdded.emit(comment);
     });
   }
+
   updateCommentText(text: string): void {
     this.commentText = text;
   }
