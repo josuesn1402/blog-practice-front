@@ -62,7 +62,14 @@ export class PostComponent implements OnInit {
   onDeleteClicked() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
-      this.postService.deletePost(id);
+      this.postService.deletePost(id).subscribe({
+        next: (res) => {
+          this.router.navigate(['/']);
+        },
+        error: (error) => {
+          console.error('Error al eliminar el post:', error);
+        },
+      });
     }
   }
 }

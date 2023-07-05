@@ -48,7 +48,8 @@ export class PostService {
     return this.http.patch<PostAdd>(`${this.apiUrl}${id}`, post);
   }
 
-  deletePost(id: number): Observable<PostAdd> {
-    return this.http.delete<PostAdd>(`${this.apiUrl}${id}`);
+  deletePost(id: number): Observable<any> {
+    const url = `${this.apiUrl}${id}`;
+    return this.http.delete(url);
   }
 }

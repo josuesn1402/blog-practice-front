@@ -24,7 +24,8 @@ export class PostAddComponent {
 
   constructor(
     private postService: PostService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -73,6 +74,7 @@ export class PostAddComponent {
     this.postService.addPost(this.model).subscribe({
       next: (response) => {
         this.resetForm();
+        this.router.navigate(['/']);
       },
       error: (error) => {
         console.error('Error al registrar el post:', error);
@@ -84,6 +86,7 @@ export class PostAddComponent {
     this.postService.updatePost(this.postId, this.model).subscribe({
       next: (response) => {
         this.resetForm();
+        this.router.navigate(['/']);
       },
       error: (error) => {
         console.error('Error al actualizar el post:', error);
