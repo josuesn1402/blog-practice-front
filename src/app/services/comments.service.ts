@@ -18,4 +18,12 @@ export class CommentService {
   addComment(comment: Comment): Observable<Comment> {
     return this.http.post<Comment>(this.apiUrl, comment);
   }
+
+  updateComment(id: number, comment: Comment): Observable<Comment> {
+    return this.http.put<Comment>(`${this.apiUrl}${id}`, comment);
+  }
+
+  deleteComment(id: number): Observable<Comment> {
+    return this.http.delete<Comment>(`${this.apiUrl}${id}`);
+  }
 }

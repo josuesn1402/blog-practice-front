@@ -39,4 +39,16 @@ export class PostService {
   addPost(post: PostAdd): Observable<PostAdd> {
     return this.http.post<PostAdd>(this.apiUrl, post);
   }
+
+  updatePost(id: number, post: PostAdd): Observable<PostAdd> {
+    return this.http.put<PostAdd>(`${this.apiUrl}${id}`, post);
+  }
+
+  patchPost(id: number, post: PostAdd): Observable<PostAdd> {
+    return this.http.patch<PostAdd>(`${this.apiUrl}${id}`, post);
+  }
+
+  deletePost(id: number): Observable<PostAdd> {
+    return this.http.delete<PostAdd>(`${this.apiUrl}${id}`);
+  }
 }
