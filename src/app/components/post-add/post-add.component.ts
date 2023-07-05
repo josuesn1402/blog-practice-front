@@ -10,11 +10,6 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./post-add.component.scss'],
 })
 export class PostAddComponent {
-  title: string = '';
-  content: string = '';
-  urlImage: string = '';
-  category: string = '';
-
   postId: number = 0;
   isEditMode: boolean = false;
   model: PostAdd = {
@@ -77,7 +72,6 @@ export class PostAddComponent {
   addPost() {
     this.postService.addPost(this.model).subscribe({
       next: (response) => {
-        console.log('Post registrado:', response);
         this.resetForm();
       },
       error: (error) => {
@@ -89,7 +83,6 @@ export class PostAddComponent {
   updatePost() {
     this.postService.updatePost(this.postId, this.model).subscribe({
       next: (response) => {
-        console.log('Post actualizado:', response);
         this.resetForm();
       },
       error: (error) => {

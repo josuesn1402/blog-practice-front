@@ -58,4 +58,11 @@ export class PostComponent implements OnInit {
       });
     }
   }
+
+  onDeleteClicked() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      this.postService.deletePost(id);
+    }
+  }
 }

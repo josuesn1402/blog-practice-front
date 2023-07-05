@@ -83,7 +83,7 @@
         class="px-2"
         [(ngModel)]="model.category"
         #category="ngModel"
-        minlength="3"
+        minlength="2"
         maxlength="40"
         required
       />
@@ -94,7 +94,7 @@
     >
       <bg-alert
         [message]="
-          'La categoría es requerida y debe tener entre 3 y 40 caracteres'
+          'La categoría es requerida y debe tener entre 2 y 40 caracteres'
         "
       ></bg-alert>
     </div>

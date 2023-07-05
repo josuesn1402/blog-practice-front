@@ -2,7 +2,7 @@
   <div class="post__header overflow-y-hidden">
     <img [src]="post?.urlImage || ''" alt="" class="post__picture w-full" />
   </div>
-  <div class="post__info flex justify-between">
+  <div class="post__info flex justify-between items-center">
     <h5
       class="post__category border border-solid inline-block px-4 py-0.5 text-sm"
     >
@@ -12,7 +12,7 @@
       <button class="btn-edit" (click)="onEditClicked()">
         <img src="assets/image/edit.svg" alt="Editar" class="mr-4" />
       </button>
-      <button class="btn-delete">
+      <button class="btn-delete" (click)="onDeleteClicked()">
         <img src="assets/image/trash.svg" alt="Eliminar" />
       </button>
     </div>
