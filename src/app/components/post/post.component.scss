@@ -15,12 +15,15 @@
     width: 100%;
   }
 
+  &__info {
+    margin: 1rem 50px 0;
+  }
+
   &__category {
     background-color: var(--color-light);
     border-color: var(--color-gray);
     color: var(--color-gray);
     border-radius: 0.4rem;
-    margin: 1rem 50px 0;
   }
 
   &__body {

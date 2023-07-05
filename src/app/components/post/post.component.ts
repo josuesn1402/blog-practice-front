@@ -1,7 +1,5 @@
-// post.component.ts
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Category } from 'src/app/models/category.model';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Comment } from 'src/app/models/comment.model';
 import { Post } from 'src/app/models/post.model';
 import { CommentService } from 'src/app/services/comments.service';
@@ -17,6 +15,7 @@ export class PostComponent implements OnInit {
   comments: Comment[] = [];
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private postService: PostService,
     private commentService: CommentService
@@ -43,5 +42,20 @@ export class PostComponent implements OnInit {
 
   handleCommentAdded(comment: Comment): void {
     this.comments.push(comment);
+  }
+
+  onEditClicked() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      this.postService.getPostId(id).subscribe({
+        next: (post) => {
+          this.post = post;
+          this.router.navigate(['/post-edit', id]);
+        },
+        error: (error) => {
+          console.error('Error al obtener los datos del post:', error);
+        },
+      });
+    }
   }
 }

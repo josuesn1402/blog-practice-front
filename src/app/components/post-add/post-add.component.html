@@ -21,7 +21,11 @@
       *ngIf="title.invalid && (title.dirty || title.touched)"
       class="flex justify-center"
     >
-      <bg-alert [message]="''"></bg-alert>
+      <bg-alert
+        [message]="
+          'El título es requerido y debe tener entre 10 y 55 caracteres'
+        "
+      ></bg-alert>
     </div>
     <div class="input__container grid gap-y-2">
       <label for="content" class="input__content text-xl">Contenido *</label>
@@ -40,7 +44,7 @@
       *ngIf="content.invalid && (content.dirty || content.touched)"
       class="flex justify-center"
     >
-      <bg-alert [message]="''"></bg-alert>
+      <bg-alert [message]="'El contenido es requerido'"></bg-alert>
     </div>
     <div class="input__container grid gap-y-2">
       <label for="urlimage" class="input__urlimage text-xl"
@@ -64,10 +68,14 @@
       *ngIf="urlImage.invalid && (urlImage.dirty || urlImage.touched)"
       class="flex justify-center"
     >
-      <bg-alert [message]="''"></bg-alert>
+      <bg-alert
+        [message]="
+          'La URL de la imagen es requerida y debe tener entre 10 y 230 caracteres'
+        "
+      ></bg-alert>
     </div>
     <div class="input__container grid gap-y-2">
-      <label for="category" class="input__category text-xl">Categoria *</label>
+      <label for="category" class="input__category text-xl">Categoría *</label>
       <input
         type="text"
         name="category"
@@ -84,7 +92,11 @@
       *ngIf="category.invalid && (category.dirty || category.touched)"
       class="flex justify-center"
     >
-      <bg-alert [message]="''"></bg-alert>
+      <bg-alert
+        [message]="
+          'La categoría es requerida y debe tener entre 3 y 40 caracteres'
+        "
+      ></bg-alert>
     </div>
     <button
       type="submit"

@@ -36,8 +36,8 @@ export class PostService {
     return this.http.get<Post>(`${this.apiUrl}${id}`);
   }
 
-  addPost(post: PostAdd): Observable<PostAdd> {
-    return this.http.post<PostAdd>(this.apiUrl, post);
+  addPost(post: PostAdd): Observable<Post> {
+    return this.http.post<Post>(this.apiUrl, post);
   }
 
   updatePost(id: number, post: PostAdd): Observable<PostAdd> {
